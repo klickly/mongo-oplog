@@ -1,6 +1,6 @@
 {
   "name": "@klickly/mongo-oplog",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Watch mongodb oplog in a simple way",
   "author": "Jonathan Brumley <cayasso@gmail.com>",
   "homepage": "https://github.com/cayasso/mongo-oplog",
@@ -21,7 +21,7 @@
   "dependencies": {
     "debug": "^3.1.0",
     "eventemitter3": "^2.0.3",
-    "mongodb": "3.6.6"
+    "mongodb": "4.17.0"
   },
   "publishConfig": {
     "@klickly:registry": "https://npm.pkg.github.com"

@@ -5,8 +5,8 @@ const { MongoClient } = require('mongodb')
 const MongoOplog = require('../src/index')
 
 const conn = {
-  mongo: 'mongodb://127.0.0.1:27017/optest',
-  oplog: 'mongodb://127.0.0.1:27017/local',
+  mongo: 'mongodb://klicklyhost:27018/klickly-main',
+  oplog: 'mongodb://klicklyhost:30011,klicklyhost:30012,klicklyhost:30013/local?replicaSet=rs1',
   error: 'mongodb://127.0.0.1:8888/error'
 }
 
@@ -16,9 +16,9 @@ let oplog
 
 describe('mongo-oplog', function () {
   before(function (done) {
-    MongoClient.connect(conn.mongo, function (err, database) {
+    MongoClient.connect(conn.mongo, function (err, client) {
       if (err) return done(err)
-      db = database
+      db = client.db('test')
       done()
     })
   })
